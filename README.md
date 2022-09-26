@@ -1,6 +1,6 @@
 # Simple useFetch "error" repo.
 
-Small Nuxt3 app for demonstrating multiple useFetch causing "Nuxt instance is not available error".
+Small Nuxt3 app for demonstrating multiple useFetch causing "nuxt instance unavailable" error.
 
 # Reproduction Steps
 

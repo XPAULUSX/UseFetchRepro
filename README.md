@@ -1,42 +1,11 @@
-# Nuxt 3 Minimal Starter
+# Simple useFetch "error" repo.
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Small Nuxt3 app for demonstrating multiple useFetch causing "Nuxt instance is not available error".
 
-## Setup
+# Reproduction Steps
 
-Make sure to install the dependencies:
+Simply run the app with npm run dev, index.vue is using the useCategories.js composable which in turn calls the useWhitelabels.js composable, both of these make a request to server/api using useFetch which produces the error outlined above.
 
-```bash
-# yarn
-yarn install
+# How to fix?
 
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+To get round this for now I have replaced second useFetch call within useWhitelabel.js with $fetch instead, if you make these changes you can see the index page will then begin to work as expected.
